@@ -1,0 +1,1661 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="数据结构项目-------算数表达式求解, tongji4m3&#39;s Blog">
+    <meta name="description" content="你日渐平庸，甘于平庸，将继续平庸。">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="baidu-site-verification" content="code-MyLOF51Lns" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="google-site-verification" content="cb_eRUNfSOmCVjXFsefzdRthA-wzRyT6ws4hOMuQyUA" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>数据结构项目-------算数表达式求解 | tongji4m3&#39;s Blog</title>
+    <link rel="icon" type="image/png" href="https://cdn.jsdelivr.net/gh/tongji4m3/tongji4m3.github.io/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/tongji4m3/tongji4m3.github.io/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/tongji4m3/tongji4m3.github.io/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/tongji4m3/tongji4m3.github.io/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/tongji4m3/tongji4m3.github.io/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/tongji4m3/tongji4m3.github.io/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/tongji4m3/tongji4m3.github.io/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/tongji4m3/tongji4m3.github.io/css/my.css">
+
+    <script src="https://cdn.jsdelivr.net/gh/tongji4m3/tongji4m3.github.io/libs/jquery/jquery.min.js"></script>
+
+<meta name="generator" content="Hexo 4.2.0"><link rel="alternate" href="/atom.xml" title="tongji4m3's Blog" type="application/atom+xml">
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="https://cdn.jsdelivr.net/gh/tongji4m3/tongji4m3.github.io/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">tongji4m3&#39;s Blog</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/contact" class="waves-effect waves-light">
+      
+      <i class="fas fa-comments" style="zoom: 0.6;"></i>
+      
+      <span>留言板</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>友情链接</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="https://cdn.jsdelivr.net/gh/tongji4m3/tongji4m3.github.io/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">tongji4m3&#39;s Blog</div>
+        <div class="logo-desc">
+            
+            你日渐平庸，甘于平庸，将继续平庸。
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/contact" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-comments"></i>
+			
+			留言板
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			友情链接
+		</a>
+          
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/tongji4m3" class="waves-effect waves-light" target="_blank">
+                <i class="fab fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/tongji4m3" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/tongji4m3/tongji4m3.github.io/medias/featureimages/16.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">数据结构项目-------算数表达式求解</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/tongji4m3/tongji4m3.github.io/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        margin: 35px 0 15px 0;
+        padding-left: 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        height: calc(100vh - 250px);
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+
+        position: absolute;
+        right: 23.5vw;
+        display: block;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/%E6%A0%88/">
+                                <span class="chip bg-color">栈</span>
+                            </a>
+                        
+                            <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">
+                                <span class="chip bg-color">数据结构</span>
+                            </a>
+                        
+                            <a href="/tags/c/">
+                                <span class="chip bg-color">c++</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/%E9%A1%B9%E7%9B%AE%E6%96%87%E6%A1%A3/" class="post-category">
+                                项目文档
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2020-01-19
+                </div>
+                
+
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    4.4k
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    17 分
+                </div>
+                
+
+                
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+        </div>
+        <hr class="clearfix">
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h1 id="源码地址"><a href="#源码地址" class="headerlink" title="源码地址"></a><a href="https://github.com/tongji4m3/DataStructureDesign" target="_blank" rel="noopener">源码地址</a></h1><blockquote>
+<p>  算数表达式求解</p>
+<p>  数据结构作业 C++语言实现</p>
+<p>  直接从word文档转的,代码格式有些问题,建议在源码地址查看word版</p>
+</blockquote>
+<h1 id="1-分析"><a href="#1-分析" class="headerlink" title="1 分析"></a>1 分析</h1><h2 id="1-1-项目要求"><a href="#1-1-项目要求" class="headerlink" title="1.1 项目要求"></a>1.1 项目要求</h2><p>从键盘上输入中缀算数表达式，包括括号，计算出表达式的值。</p>
+<p>程序对所有输入的表达式作简单的判断，如表达式有错，能给出适当的提示。</p>
+<p>支持包括加减，乘除取余，乘方和括号等操作符，其中优先级是等于&lt;括号&lt;加减&lt;乘除取余&lt;乘方。</p>
+<p>能处理单目运算符：+或-。</p>
+<h2 id="1-2-功能分析"><a href="#1-2-功能分析" class="headerlink" title="1.2 功能分析"></a>1.2 功能分析</h2><p>首先,得对输入表达式进行判断,看它是否合理,如果不合理,要指出错误之处;如果是合理的,那么要计算这个表达式的结果并返回。</p>
+<p>表达式是否错误根据下面几条进行判断：</p>
+<blockquote>
+<p>  1.出现了除了+-* % / ^ ()=,数字以外的其他字符</p>
+</blockquote>
+<blockquote>
+<p>  2.()匹配不全 或者()里面为空</p>
+</blockquote>
+<blockquote>
+<p>  3.表达式没有结束之前出现了=,或者表达式最后不是=</p>
+</blockquote>
+<blockquote>
+<p>  4.+-不是开头,或者前方不是( 一目运算符</p>
+</blockquote>
+<blockquote>
+<p>  5.运算符前方或者后方无数字或者(),左边为),右边为(,避免(+) 二目运算符</p>
+</blockquote>
+<h1 id="2-设计"><a href="#2-设计" class="headerlink" title="2 设计"></a>2 设计</h1><h2 id="2-1-主函数设计"><a href="#2-1-主函数设计" class="headerlink" title="2.1 主函数设计"></a>2.1 主函数设计</h2><p>先输入表达式，调用函数判断表达式是否合理，如果合理，首先将之转换为后续表达式，输出后续表达式的字符串，并且调用函数计算后续表达式，并且打印后续表达式的结果。</p>
+<p>（因为之后需要用到栈，所以程序还出现了Stack.h，与Node.h，因为之前的题目也用过，所以这里直接复用之前已经实现的了，不在重新说明。）</p>
+<h2 id="2-2-isValid-函数设计"><a href="#2-2-isValid-函数设计" class="headerlink" title="2.2 isValid()函数设计"></a>2.2 isValid()函数设计</h2><p>大致就是通过循环查看表达式每一个字符来判断表达式是否符合上面几条，如果不合法，就输出对应的提示信息，并且函数返回false，表示表达式有误，直到所有的条件都满足了，才返回true。</p>
+<p>主要的难度就是对（）合理性的判断，于是通过许多条件限制来判断是否是合理的表达式，如：左括号右边都没出现右括号；检测到了右括号后，在该处左边的右括号数量大于左括号数量；以及左括号右括号之中没有东西等。</p>
+<p>随后，当+-作为单目运算符，或者双目运算符的相关讨论也需要进行比较细致的分类讨论。再对其他运算符进行讨论是否合理。</p>
+<h2 id="2-3-toPostOrder-函数设计"><a href="#2-3-toPostOrder-函数设计" class="headerlink" title="2.3 toPostOrder()函数设计"></a>2.3 toPostOrder()函数设计</h2><p>该函数目的是将之前的那个已经检验过合理性的表达式转为后续表达式，因为后序表达式能直接的计算。大致思路是：用栈存储运算符（char类型），然后遍历传入的字符串，分情况讨论，例如处理一目运算符+-（正负），处理数字，处理左右括号，处理其他运算符等。准备一个string存储后序表达式，如果是数字直接放入，如果是其他，则要小心的判断优先级，当遇到的优先级不断增大时，压入栈中，如果优先级相同,则将所有小于等于他优先级的运算符弹出,再在栈中加入这个运算符。这样就能保证后续表达式优先级正确了。在每个元素之间，还加入了一个空格（如12<br>5<br>+），这样可以避免出现将之读为125的bug。大致就是这样转换，但是还有许多细节来保证转换正确，这将在函数实现中进行细致讨论。</p>
+<h2 id="2-4-caculatePostOrder-函数设计"><a href="#2-4-caculatePostOrder-函数设计" class="headerlink" title="2.4 caculatePostOrder ()函数设计"></a>2.4 caculatePostOrder ()函数设计</h2><p>该函数通过传入一个后续表达式,输出一个int值,代表表达式的结果。主要设计思路是用栈存储数值，遍历后续表达式，如果是数字就把整个数字压入栈中（如遇到19）会把19压入，而不是压入1和9。如果遍历到了操作符，那么就将栈顶两个元素取出并且计算，再压入栈中（因为这时是后续表达式，后续表达式已经把优先级等都考虑好了，所以只要根据符号采取特定的方法计算即可）。遍历完之后将栈顶元素返回，这个即为表达式的值。</p>
+<h1 id="3-实现"><a href="#3-实现" class="headerlink" title="3 实现"></a>3 实现</h1><h2 id="3-1-主函数实现"><a href="#3-1-主函数实现" class="headerlink" title="3.1 主函数实现"></a>3.1 主函数实现</h2><p>先让用户输入表达式，然后判断合理性，合理的话再打印转换成为后续表达式的字符串，随后打印表达式的结果，最后让用户选择是否结束程序（不这样的话运行exe文件输入完之后就会退出，强制设定退出时间也不太好，所以让用户自己选择）。</p>
+<p>int main()<br>{<br>while(true)<br>{<br>string expr,isContinue;<br>cout &lt;&lt; “输入表达式：” &lt;&lt; endl;<br>getline(cin,expr);<br>if(isValid(expr))<br>{<br>string postOrderedExpr=toPostOrder(expr);<br>cout &lt;&lt;“后序表达式为:”&lt;&lt; postOrderedExpr&lt;&lt;endl;<br>int result = caculatePostOrder(postOrderedExpr);<br>cout&lt;&lt;result&lt;&lt;endl;<br>}<br>cout&lt;&lt;“任意键继续,n退出？”;<br>getline(cin,isContinue);<br>if(isContinue==”n”)<br>{<br>break;<br>}<br>}<br>return 0;<br>}</p>
+<h2 id="3-2-isValid-函数实现"><a href="#3-2-isValid-函数实现" class="headerlink" title="3.2 isValid()函数实现"></a>3.2 isValid()函数实现</h2><h3 id="3-2-1-简单的判断"><a href="#3-2-1-简单的判断" class="headerlink" title="3.2.1 简单的判断"></a>3.2.1 简单的判断</h3><p>对表达式进行遍历（对运算符和左右括号的判断也在遍历表达式的时候进行，只不过为了分节而在下面几节再叙述），如果出现了表达式意外的字符，即既不是数字又不是+-*/%^=(),则立即提示并且返回。如果表达式没有结束之前出现了=,或者表达式最后不是=，也提示并且返回。</p>
+<p>if(expr[i]!=’+’&amp;&amp;expr[i]!=’-‘&amp;&amp;expr[i]!=’*‘&amp;&amp;expr[i]!=’/‘&amp;&amp;expr[i]!=’%’&amp;&amp;expr[i]!=’^‘&amp;&amp;<br>expr[i]!=’(‘&amp;&amp;expr[i]!=’)’&amp;&amp;expr[i]!=’=’&amp;&amp; !(expr[i]&lt;=’9’&amp;&amp;expr[i]&gt;=’0’))<br>{<br>cout&lt;&lt;“表达式含有非法字符”&lt;&lt;endl;<br>return false;<br>}</p>
+<p>if(i==N-1 &amp;&amp; expr[i]!=’=’)<br>{<br>cout &lt;&lt; “不以=结尾”&lt;&lt;endl;<br>return false;<br>}<br>if(i!=N-1 &amp;&amp; expr[i]==’=’)<br>{<br>cout &lt;&lt; “表达式中出现了=”&lt;&lt;endl;<br>return false;<br>}</p>
+<h3 id="3-2-2-对左右括号的判断"><a href="#3-2-2-对左右括号的判断" class="headerlink" title="3.2.2 对左右括号的判断"></a>3.2.2 对左右括号的判断</h3><p>对于每一个左括号，如果它右边位置都没出现右括号则提示并返回，这样能确保有足够的右括号，但是右括号可能多了，于是需要对右括号进行判断。</p>
+<p>对于每一个右括号，从该位置计算，如果左边的左括号数量小于了右括号的数量（该右括号也算上），那么是不合理的，则提示并返回。这样对于每一个右括号，都保证它左边有充分的左括号（或许多了，但是经过上面的条件，则符合条件的左右括号应该正好完全匹配）。</p>
+<p>还判断了空（）的情况，即左括号右括号之中没有东西，那么也视为不合理，则提示并返回。</p>
+<p>if(expr[i]==’(‘)<br>{<br>if(expr.find(‘)’, i)==-1)<br>{<br>cout&lt;&lt;“没有足够的右括号匹配左括号”&lt;&lt;endl;<br>return false;<br>}<br>}<br>if(expr[i]==’)’)<br>{<br>int leftCount = 0, rightCount = 0;//()的个数<br>for (int j = 0; j &lt;= i; ++j)<br>{<br>if(expr[j]==’(‘)<br>{<br>++leftCount;<br>}<br>else if(expr[j]==’)’)<br>{<br>++rightCount;<br>}<br>}<br>if(leftCount&lt;rightCount)<br>{<br>cout&lt;&lt;“没有足够的左括号匹配右括号”&lt;&lt;endl;<br>return false;<br>}<br>}<br>if(expr[i]==’(‘ &amp;&amp;i+1&lt;N &amp;&amp; expr[i+1]==’)’)<br>{<br>cout&lt;&lt;“出现了空()”&lt;&lt;endl;<br>return false;<br>}</p>
+<h3 id="3-2-3单目表达式的判断"><a href="#3-2-3单目表达式的判断" class="headerlink" title="3.2.3单目表达式的判断"></a>3.2.3单目表达式的判断</h3><p>之所以单独讨论，是因为要以单目运算符，双目运算符来分别讨论。</p>
+<p>如果这两个符号是表达式的第一个元素，或者它左边是左括号（这里假定合理的表达式中单目表达式都用括号括起来，如（-1）），则是单目表达式，代表的是正负。而是单目运算符时，他右边可以是一个子表达式（判断条件是它右边第一个元素是左括号），或者是一个数（判断条件是右边第一个字符大于‘0’并且小于‘9’）。否则不合理，则提示并返回。</p>
+<p>如果出现的=-不是单目运算符正负，那么再通过左右条件判断是否是合理的双目运算符，即为加减。而这样他们和其他运算符判断方式一样，在下一小节统一叙述。</p>
+<p>if(expr[i]==’+’ || expr[i]==’-‘)<br>{<br>if(i==0 || expr[i-1]==’(‘)//满足第四点 单目运算符<br>{<br>if(i+1&lt;N &amp;&amp; ((expr[i+1]==’(‘)||(expr[i+1]&lt;=’9’&amp;&amp;expr[i+1]&gt;=’0’)))//合理了的<br>{<br>}<br>else<br>{<br>cout&lt;&lt;“+-后面没有数字或者(“&lt;&lt;endl;<br>return false;<br>}<br>}<br>//i+1存在,并且左边是)或者数字,并且右边是(或者数字<br>else if(i+1&lt;N &amp;&amp; (expr[i-1]==’)’ || (expr[i-1]&lt;=’9’&amp;&amp;expr[i-1]&gt;=’0’))&amp;&amp;<br>((expr[i+1]==’(‘)||(expr[i+1]&lt;=’9’&amp;&amp;expr[i+1]&gt;=’0’)))//i-1肯定&gt;=0,因为上面的条件<br>{  </p>
+<p>}<br>else<br>{<br>cout&lt;&lt;“不合理的+-“&lt;&lt;endl;<br>return false;<br>}<br>}</p>
+<h3 id="3-2-4-双目表达式的判断"><a href="#3-2-4-双目表达式的判断" class="headerlink" title="3.2.4 双目表达式的判断"></a>3.2.4 双目表达式的判断</h3><p>判断很简单，首先，要判断双目表达式的左右两边不是空的，因为双目表达式需要接受两个操作数。然后判断它左右两边是否是子表达式，或者是数字。如果不是这两者之一，就是不合理的双目表达式，则不合理，则提示并返回。</p>
+<p>if(expr[i]==’^‘||expr[i]==’%’||expr[i]==’*‘||expr[i]==’/‘)<br>{<br>if(i-1&gt;=0 &amp;&amp; i+1&lt;N &amp;&amp; ((expr[i-1]==’)’ ||<br>(expr[i-1]&lt;=’9’&amp;&amp;expr[i-1]&gt;=’0’))&amp;&amp;<br>((expr[i+1]==’(‘)||(expr[i+1]&lt;=’9’&amp;&amp;expr[i+1]&gt;=’0’))))<br>{<br>//合格<br>}<br>else<br>{<br>cout&lt;&lt;“不合理的*/^%”&lt;&lt;endl;<br>return false;<br>}<br>}</p>
+<h2 id="3-3-toPostOrder-函数实现"><a href="#3-3-toPostOrder-函数实现" class="headerlink" title="3.3 toPostOrder()函数实现"></a>3.3 toPostOrder()函数实现</h2><h3 id="3-3-1函数描述"><a href="#3-3-1函数描述" class="headerlink" title="3.3.1函数描述"></a>3.3.1函数描述</h3><p>用一个map将运算符和他对应的优先级绑定（用数字表示，数字越大优先级越高）。并且准备一个栈存储运算符字符，一个字符串存储整个后续表达式。</p>
+<p>开始遍历整个原始的表达式字符串，根据字符的不同采取不同的操作：</p>
+<blockquote>
+<p>  1.如果是一目运算符=-(正负),(判断是他们的条件是他们是第一个字符或者前方是左括号),如果是+,不处理,如果是-,那么就相当于是0-目标数,例如-5,那么后续表达式就加入0<br>  5<br>  -,这里注意两点,一是,作为负号,优先级是最高的,所以不用考虑其他符号,直接加入即可。二是需要小心的加入空格，如这里必须要是0<br>  5 -，不能是05 -。</p>
+</blockquote>
+<blockquote>
+<p>  2.如果是数字，那么用另外的指针记录该位置，该指针循环往后直到找到第一个非数字字符，把整个数字都截取出来加入到后序表达式中，再再后续表达式后面加上一个空格，避免出现原本代表两个数的后续表达式（10<br>  5 +）变成了错误的（105+）。</p>
+</blockquote>
+<blockquote>
+<p>  3.处理左括号（，左括号就直接压入栈中，将来作为一个弹栈的标志。</p>
+</blockquote>
+<blockquote>
+<p>  4.处理非）的其他字符，因为是按顺序处理下来的，代表前方已经处理了一目运算符，左括号，数字，所以这里的<br>  ！=‘）’<br>  代表了所有其他的双目运算符。首先，如果栈为空的话，直接将该运算符压入栈中，而如果栈不为空，则需要与栈顶元素对比，将所有大于等于该运算符优先级的栈元素依次取出栈，放入后续表达式中，这样就能保证优先级大的总是优先计算，而大于等于的都取出来是因为如果是等于的话，代表前后的优先级是相同的，但是为了从左往右计算，所以需要把左边那个优先级相等的运算符先取出来放入后续表达式中。当确保栈中没有大于等于该运算符的元素后，再将该运算符放入栈中。</p>
+</blockquote>
+<blockquote>
+<p>  5.处理右括号）运算符，到这一步时，只需要不断弹栈，不断将栈中运算符加入后续表达式中直到遇到左括号（为止，因为在处理其他运算符时运算符已经按照相应的顺序在栈中或者在后续表达式中摆放好了，所以直接这样处理即可。</p>
+</blockquote>
+<blockquote>
+<p>  循环结束后，已经将所有的数字和大部分运算符放入了后续表达式中，但是最后还会有少部分的运算符存在栈中（除非表达式最后一个字符是右括号）），所以此时要把栈中剩余所有元素放入后续表达式中。最后，将后续表达式返回即可。</p>
+</blockquote>
+<h3 id="3-3-2-函数代码"><a href="#3-3-2-函数代码" class="headerlink" title="3.3.2 函数代码"></a>3.3.2 函数代码</h3><pre><code>string toPostOrder(const string &amp; expr)  
+{  
+unordered_map\&lt;char,int\&gt; priority;//存储运算符的优先级  
+priority[&#39;=&#39;] = 1;  
+priority[&#39;(&#39;] = 2;  
+priority[&#39;)&#39;] = 2;  
+priority[&#39;+&#39;] = 3;  
+priority[&#39;-&#39;] = 3;  
+priority[&#39;\*&#39;] = 4;  
+priority[&#39;/&#39;] = 4;  
+priority[&#39;%&#39;] = 5;  
+priority[&#39;\^&#39;] = 6;  
+string postOrderedExpr;  
+Stack\&lt;char\&gt; ops;//存储运算符的  
+for (int i = 0; i \&lt; expr.length(); ++i)  
+{  
+//处理一目运算符  
+if((expr[i]==&#39;+&#39; \|\| expr[i]==&#39;-&#39;)&amp;&amp;(i == 0 \|\| expr[i - 1] ==
+&#39;(&#39;))//当作正负来使用时  
+{  
+if(expr[i]==&#39;+&#39;)  
+{  
+//忽略他  
+}  
+else  
+{  
+postOrderedExpr += &quot;0 &quot;;  
+++i;//将-后面的读入  
+postOrderedExpr += expr[i];  
+postOrderedExpr += &quot; - &quot;;  
+}  
+
+}  
+else
+if(expr[i]\&lt;=&#39;9&#39;&amp;&amp;expr[i]\&gt;=&#39;0&#39;)//这里需要处理下,就是如果输入大于0-9的数字也能正确处理  
+{  
+int hi = i+1;  
+while (true)  
+{  
+if (hi \&lt; expr.length() &amp;&amp; expr[hi] \&lt;= &#39;9&#39;&amp;&amp;expr[hi] \&gt;= &#39;0&#39;)  
+{  
+++hi;  
+}  
+else  
+{  
+break;  
+}  
+
+}  
+//hi指向的是数字后面的第一个非数字字符  
+//expr.substr(i, hi - i); 得到了数字的字符串  
+postOrderedExpr += expr.substr(i, hi - i);  
+postOrderedExpr += &quot; &quot;;//避免出现10+5-\&gt;105+的问题  
+i = hi - 1;  
+}  
+else if(expr[i]==&#39;(&#39;)  
+{  
+ops.push(expr[i]);  
+}  
+else if(expr[i]!=&#39;)&#39;)//除)外的运算符都压入  
+{  
+if(ops.empty())//栈为空,简单压入即可  
+{  
+ops.push(expr[i]);  
+}  
+else  
+{  
+//需要与栈顶运算符比较优先级  
+int topStackPriority = priority[ops.top()];  
+if(priority[expr[i]]\&gt;topStackPriority)  
+{  
+ops.push(expr[i]);  
+}  
+else  
+{  
+//优先级相同,必将弹出之前所有小于等于他优先级的运算符,再加入这个运算符  
+while(!ops.empty() &amp;&amp; priority[expr[i]]\&lt;=topStackPriority)  
+{  
+postOrderedExpr += ops.top();  
+postOrderedExpr += &quot; &quot;;  
+ops.pop();  
+if(!ops.empty())  
+{  
+topStackPriority = priority[ops.top()];  
+}  
+}  
+
+ops.push(expr[i]);  
+}  
+}  
+}  
+else if(expr[i]==&#39;)&#39;)  
+{  
+//表达式检验过,一定正确,所以可以直接这样用  
+while(ops.top()!=&#39;(&#39;)  
+{  
+postOrderedExpr += ops.top();  
+postOrderedExpr += &quot; &quot;;//避免出现10+5-\&gt;105+的问题  
+ops.pop();  
+}  
+ops.pop();//把(弹出去  
+}  
+}  
+//剩下的运算符一起加上  
+while(!ops.empty())  
+{  
+if(ops.top()!=&#39;=&#39;)//不要=  
+{  
+postOrderedExpr += ops.top();  
+postOrderedExpr += &quot; &quot;;  
+}  
+ops.pop();  
+}  
+return postOrderedExpr;  
+}</code></pre>
+<h2 id="3-4-caculatePostOrder（）的实现"><a href="#3-4-caculatePostOrder（）的实现" class="headerlink" title="3.4 caculatePostOrder（）的实现"></a>3.4 caculatePostOrder（）的实现</h2><h3 id="3-4-1函数描述"><a href="#3-4-1函数描述" class="headerlink" title="3.4.1函数描述"></a>3.4.1函数描述</h3><p>传入一个后续表达式，将计算的结果以int类型返回。</p>
+<p>用栈存储int类型数字。对后续表达式进行遍历，如果是数字，同样，得按照和前面一样的方法，将整个数字取出来，如23等，将数字放入栈中。如果是运算符，根据运算符的不同，采取相应的操作，但其实操作是很类似的，都是从栈中取出两个数字，用前面的数采用相应的运算符和后面的数进行计算，并且将运算符重新加入栈中。</p>
+<p>因为一目运算符正负=-已经转换为空或者双目运算符，左右括号也去掉，表达式也是合理的了，所以只要这样简单的运算到后续表达式结束即可得到结果，而结果就是栈顶元素。</p>
+<h3 id="3-4-2-函数代码"><a href="#3-4-2-函数代码" class="headerlink" title="3.4.2 函数代码"></a>3.4.2 函数代码</h3><p>（一些重复部分没放上来）</p>
+<p>int caculatePostOrder(const string &amp; postOrderedExpr)<br>{<br>Stack&lt;int&gt; nums;<br>for (int i = 0; i &lt; postOrderedExpr.length(); ++i)<br>{<br>if(postOrderedExpr[i]&lt;=’9’&amp;&amp;postOrderedExpr[i]&gt;=’0’)<br>{<br>//还要考虑处理大于10的数字  </p>
+<p>int hi = i + 1;<br>while (true)<br>{<br>if (hi &lt; postOrderedExpr.length() &amp;&amp; postOrderedExpr[hi] &lt;=<br>‘9’&amp;&amp;postOrderedExpr[hi] &gt;= ‘0’)<br>{<br>++hi;<br>}<br>else<br>{<br>break;<br>}  </p>
+<p>}<br>//hi指向的是数字后面的第一个非数字字符<br>//postOrderedExpr.substr(i, hi - i); 得到了数字的字符串  </p>
+<p>nums.push(atoi(postOrderedExpr.substr(i, hi - i).c_str()));  </p>
+<p>i = hi - 1;<br>}<br>else if(postOrderedExpr[i]==’^‘)<br>{<br>//num1为左,num2为右<br>int num2 = nums.top();<br>nums.pop();<br>int num1 = nums.top();<br>nums.pop();<br>nums.push(pow(num1, num2));<br>}<br>else if(postOrderedExpr[i]==’%’)<br>{<br>//num1为左,num2为右<br>int num2 = nums.top();<br>nums.pop();<br>int num1 = nums.top();<br>nums.pop();<br>nums.push(num1%num2);<br>}  </p>
+<p>}<br>return nums.top();<br>}</p>
+<h1 id="4-测试"><a href="#4-测试" class="headerlink" title="4 测试"></a>4 测试</h1><h2 id="4-1-功能测试"><a href="#4-1-功能测试" class="headerlink" title="4.1 功能测试"></a>4.1 功能测试</h2><h3 id="4-1-1-测试1"><a href="#4-1-1-测试1" class="headerlink" title="4.1.1 测试1"></a>4.1.1 测试1</h3><p><strong>测试用例</strong>：101+222=</p>
+<p><strong>实验结果：</strong></p>
+<p><img src="https://tongji4m3.oss-cn-beijing.aliyuncs.com/3b0feb3db599b29bb40f8324b63a5999.png"></p>
+<h3 id="4-1-2-测试2"><a href="#4-1-2-测试2" class="headerlink" title="4.1.2 测试2"></a>4.1.2 测试2</h3><p><strong>测试用例：</strong>-2*(3+5)+2^3/4=</p>
+<p><strong>实验结果：</strong></p>
+<p><img src="https://tongji4m3.oss-cn-beijing.aliyuncs.com/87e4d36191d5d4540aef89f800956e6c.png"></p>
+<h3 id="4-1-3-测试3"><a href="#4-1-3-测试3" class="headerlink" title="4.1.3 测试3"></a>4.1.3 测试3</h3><p><strong>测试用例：</strong>5+(-3*(-6))=</p>
+<p><strong>实验结果：</strong></p>
+<p><img src="https://tongji4m3.oss-cn-beijing.aliyuncs.com/9e201b33a2306b0f53b4a333b27229b9.png"></p>
+<h3 id="4-1-4-测试4"><a href="#4-1-4-测试4" class="headerlink" title="4.1.4 测试4"></a>4.1.4 测试4</h3><p><strong>测试用例：</strong> 2^4/8-(+2+8)%3=</p>
+<p><strong>实验结果：</strong></p>
+<p><img src="https://tongji4m3.oss-cn-beijing.aliyuncs.com/fc08f317871e93a46b5286a9a2f94e89.png"></p>
+<h3 id="4-1-4-测试5"><a href="#4-1-4-测试5" class="headerlink" title="4.1.4 测试5"></a>4.1.4 测试5</h3><p><strong>测试用例：</strong> 1+(-5*3)/(-2)-9/2=</p>
+<p><strong>实验结果：</strong></p>
+<p><img src="https://tongji4m3.oss-cn-beijing.aliyuncs.com/4a5c05685b663cdadd33ad595a0ad38e.png"></p>
+<h3 id="4-1-4-测试6"><a href="#4-1-4-测试6" class="headerlink" title="4.1.4 测试6"></a>4.1.4 测试6</h3><p><strong>测试用例：</strong> 2*101-31*24=</p>
+<p><strong>实验结果：</strong></p>
+<p><img src="https://tongji4m3.oss-cn-beijing.aliyuncs.com/a0e6b9a48eac835cdef546116facb972.png"></p>
+<h2 id="4-2-非法表达式测试"><a href="#4-2-非法表达式测试" class="headerlink" title="4.2 非法表达式测试"></a>4.2 非法表达式测试</h2><h3 id="4-2-1-含有非法字符"><a href="#4-2-1-含有非法字符" class="headerlink" title="4.2.1 含有非法字符"></a>4.2.1 含有非法字符</h3><p><img src="https://tongji4m3.oss-cn-beijing.aliyuncs.com/480a0d4c4fb144eef60f6cb52020c9d3.png"></p>
+<h3 id="4-2-2-左右括号中内容为空"><a href="#4-2-2-左右括号中内容为空" class="headerlink" title="4.2.2 左右括号中内容为空"></a>4.2.2 左右括号中内容为空</h3><p><img src="https://tongji4m3.oss-cn-beijing.aliyuncs.com/2ee5ff4b96f3d904342cfb904b4afeaa.png"></p>
+<h3 id="4-2-3-左右括号不匹配"><a href="#4-2-3-左右括号不匹配" class="headerlink" title="4.2.3 左右括号不匹配"></a>4.2.3 左右括号不匹配</h3><p><img src="https://tongji4m3.oss-cn-beijing.aliyuncs.com/6deba4f18cb7d5abc5a3a1e4f80152fc.png"></p>
+<p><img src="https://tongji4m3.oss-cn-beijing.aliyuncs.com/fc3dc005e974be2057305ab3f7b57d0a.png"></p>
+<h3 id="4-2-4-等号位置错误"><a href="#4-2-4-等号位置错误" class="headerlink" title="4.2.4 等号位置错误"></a>4.2.4 等号位置错误</h3><p><img src="https://tongji4m3.oss-cn-beijing.aliyuncs.com/f81ada7588a4bc5102ded4253d49193b.png"></p>
+<p><img src="https://tongji4m3.oss-cn-beijing.aliyuncs.com/13e27456b27841991812efd63041ca47.png"></p>
+<h3 id="4-2-5-正负号不合理"><a href="#4-2-5-正负号不合理" class="headerlink" title="4.2.5 正负号不合理"></a>4.2.5 正负号不合理</h3><p><img src="https://tongji4m3.oss-cn-beijing.aliyuncs.com/8beb181f79e57702123cb2496b44e568.png"></p>
+<h3 id="4-2-6-双目运算符使用不合理"><a href="#4-2-6-双目运算符使用不合理" class="headerlink" title="4.2.6 双目运算符使用不合理"></a>4.2.6 双目运算符使用不合理</h3><p><img src="https://tongji4m3.oss-cn-beijing.aliyuncs.com/275c7a98a4363b5a43f707cb2d1cf470.png"></p>
+
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">tongji4m3</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="https://tongji4m3.club/posts/38c2cf7b.html">https://tongji4m3.club/posts/38c2cf7b.html</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="/about" target="_blank">tongji4m3</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/%E6%A0%88/">
+                                    <span class="chip bg-color">栈</span>
+                                </a>
+                            
+                                <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">
+                                    <span class="chip bg-color">数据结构</span>
+                                </a>
+                            
+                                <a href="/tags/c/">
+                                    <span class="chip bg-color">c++</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/tongji4m3/tongji4m3.github.io/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.4rem;
+        line-height: 38px;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="https://cdn.jsdelivr.net/gh/tongji4m3/tongji4m3.github.io/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="https://cdn.jsdelivr.net/gh/tongji4m3/tongji4m3.github.io/medias/reward/wechat.jpg" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+        <style>
+    .valine-card {
+        margin: 1.5rem auto;
+    }
+
+    .valine-card .card-content {
+        padding: 20px 20px 5px 20px;
+    }
+
+    #vcomments textarea {
+        box-sizing: border-box;
+        background: url("/medias/comment_bg.png") 100% 100% no-repeat;
+    }
+
+    #vcomments p {
+        margin: 2px 2px 10px;
+        font-size: 1.05rem;
+        line-height: 1.78rem;
+    }
+
+    #vcomments blockquote p {
+        text-indent: 0.2rem;
+    }
+
+    #vcomments a {
+        padding: 0 2px;
+        color: #4cbf30;
+        font-weight: 500;
+        text-decoration: none;
+    }
+
+    #vcomments img {
+        max-width: 100%;
+        height: auto;
+        cursor: pointer;
+    }
+
+    #vcomments ol li {
+        list-style-type: decimal;
+    }
+
+    #vcomments ol,
+    ul {
+        display: block;
+        padding-left: 2em;
+        word-spacing: 0.05rem;
+    }
+
+    #vcomments ul li,
+    ol li {
+        display: list-item;
+        line-height: 1.8rem;
+        font-size: 1rem;
+    }
+
+    #vcomments ul li {
+        list-style-type: disc;
+    }
+
+    #vcomments ul ul li {
+        list-style-type: circle;
+    }
+
+    #vcomments table, th, td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+
+    #vcomments table, th, td {
+        border: 0;
+    }
+
+    table tr:nth-child(2n), thead {
+        background-color: #fafafa;
+    }
+
+    #vcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+
+    #vcomments table td {
+        min-width: 80px;
+    }
+
+    #vcomments h1 {
+        font-size: 1.85rem;
+        font-weight: bold;
+        line-height: 2.2rem;
+    }
+
+    #vcomments h2 {
+        font-size: 1.65rem;
+        font-weight: bold;
+        line-height: 1.9rem;
+    }
+
+    #vcomments h3 {
+        font-size: 1.45rem;
+        font-weight: bold;
+        line-height: 1.7rem;
+    }
+
+    #vcomments h4 {
+        font-size: 1.25rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    #vcomments h5 {
+        font-size: 1.1rem;
+        font-weight: bold;
+        line-height: 1.4rem;
+    }
+
+    #vcomments h6 {
+        font-size: 1rem;
+        line-height: 1.3rem;
+    }
+
+    #vcomments p {
+        font-size: 1rem;
+        line-height: 1.5rem;
+    }
+
+    #vcomments hr {
+        margin: 12px 0;
+        border: 0;
+        border-top: 1px solid #ccc;
+    }
+
+    #vcomments blockquote {
+        margin: 15px 0;
+        border-left: 5px solid #42b983;
+        padding: 1rem 0.8rem 0.3rem 0.8rem;
+        color: #666;
+        background-color: rgba(66, 185, 131, .1);
+    }
+
+    #vcomments pre {
+        font-family: monospace, monospace;
+        padding: 1.2em;
+        margin: .5em 0;
+        background: #272822;
+        overflow: auto;
+        border-radius: 0.3em;
+        tab-size: 4;
+    }
+
+    #vcomments code {
+        font-family: monospace, monospace;
+        padding: 1px 3px;
+        font-size: 0.92rem;
+        color: #e96900;
+        background-color: #f8f8f8;
+        border-radius: 2px;
+    }
+
+    #vcomments pre code {
+        font-family: monospace, monospace;
+        padding: 0;
+        color: #e8eaf6;
+        background-color: #272822;
+    }
+
+    #vcomments pre[class*="language-"] {
+        padding: 1.2em;
+        margin: .5em 0;
+    }
+
+    #vcomments code[class*="language-"],
+    pre[class*="language-"] {
+        color: #e8eaf6;
+    }
+
+    #vcomments [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+
+    #vcomments b,
+    strong {
+        font-weight: bold;
+    }
+
+    #vcomments dfn {
+        font-style: italic;
+    }
+
+    #vcomments small {
+        font-size: 85%;
+    }
+
+    #vcomments cite {
+        font-style: normal;
+    }
+
+    #vcomments mark {
+        background-color: #fcf8e3;
+        padding: .2em;
+    }
+
+    #vcomments table, th, td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+
+    table tr:nth-child(2n), thead {
+        background-color: #fafafa;
+    }
+
+    #vcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+
+    #vcomments table td {
+        min-width: 80px;
+    }
+
+    #vcomments [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+</style>
+
+<div class="card valine-card" data-aos="fade-up">
+    <div class="comment_headling" style="font-size: 20px; font-weight: 700; position: relative; padding-left: 20px; top: 15px; padding-bottom: 5px;">
+        <i class="fas fa-comments fa-fw" aria-hidden="true"></i>
+        <span>评论</span>
+    </div>
+    <div id="vcomments" class="card-content" style="display: grid">
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/gh/tongji4m3/tongji4m3.github.io/libs/valine/av-min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/tongji4m3/tongji4m3.github.io/libs/valine/Valine.min.js"></script>
+<script>
+    new Valine({
+        el: '#vcomments',
+        appId: 'b3l6kB5FAaRmQL4rJm9sKfxz-gzGzoHsz',
+        appKey: 'T26ixt4nAVDxB4V3gvBDUzP6',
+        notify: 'false' === 'true',
+        verify: 'false' === 'true',
+        visitor: 'true' === 'true',
+        avatar: 'mm',
+        pageSize: '10',
+        lang: 'zh-cn',
+        placeholder: '留下你的足迹吧~'
+    });
+</script>
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/posts/629471e8.html">
+                    <div class="card-image">
+                        
+                        
+                        <img src="https://cdn.jsdelivr.net/gh/tongji4m3/tongji4m3.github.io/medias/featureimages/19.jpg" class="responsive-img" alt="数据结构项目-------家谱管理系统">
+                        
+                        <span class="card-title">数据结构项目-------家谱管理系统</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            学习数据结构项目--家谱管理系统所写的文档,主要是特殊的链表.
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-01-20
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E9%A1%B9%E7%9B%AE%E6%96%87%E6%A1%A3/" class="post-category">
+                                    项目文档
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E9%93%BE%E8%A1%A8/">
+                        <span class="chip bg-color">链表</span>
+                    </a>
+                    
+                    <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">
+                        <span class="chip bg-color">数据结构</span>
+                    </a>
+                    
+                    <a href="/tags/c/">
+                        <span class="chip bg-color">c++</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/posts/ada3a5c8.html">
+                    <div class="card-image">
+                        
+                        
+                        <img src="https://cdn.jsdelivr.net/gh/tongji4m3/tongji4m3.github.io/medias/featureimages/14.jpg" class="responsive-img" alt="数据结构项目-------电网建设造价模拟系统">
+                        
+                        <span class="card-title">数据结构项目-------电网建设造价模拟系统</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            学习数据结构项目--电网建设造价模拟系统所写的文档,主要是最小生成树
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-01-16
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E9%A1%B9%E7%9B%AE%E6%96%87%E6%A1%A3/" class="post-category">
+                                    项目文档
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E5%9B%BE/">
+                        <span class="chip bg-color">图</span>
+                    </a>
+                    
+                    <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">
+                        <span class="chip bg-color">数据结构</span>
+                    </a>
+                    
+                    <a href="/tags/%E6%9C%80%E5%B0%8F%E7%94%9F%E6%88%90%E6%A0%91/">
+                        <span class="chip bg-color">最小生成树</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/tongji4m3/tongji4m3.github.io/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/tongji4m3/tongji4m3.github.io/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/tongji4m3/tongji4m3.github.io/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/tongji4m3/tongji4m3.github.io/libs/codeBlock/codeShrink.js"></script>
+
+
+<!-- 代码块折行 -->
+
+<style type="text/css">
+code[class*="language-"], pre[class*="language-"] { white-space: pre !important; }
+</style>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/gh/tongji4m3/tongji4m3.github.io/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h1,h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h1,h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+
+    <footer class="page-footer bg-color">
+    
+    <div class="container row center-align" style="margin-bottom: 15px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            <span id="year">2019</span>
+            <a href="/about" target="_blank">tongji4m3</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            <br>
+            
+            &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
+                class="white-color">147.1k</span>&nbsp;字
+            
+            
+            
+            
+            
+            
+            <span id="busuanzi_container_site_pv">
+                |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv"
+                    class="white-color"></span>&nbsp;次
+            </span>
+            
+            
+            <br>
+            
+            <span id="sitetime">载入运行时间...</span>
+            <script>
+                function siteTime() {
+                    var seconds = 1000;
+                    var minutes = seconds * 60;
+                    var hours = minutes * 60;
+                    var days = hours * 24;
+                    var years = days * 365;
+                    var today = new Date();
+                    var startYear = "2019";
+                    var startMonth = "09";
+                    var startDate = "28";
+                    var startHour = "0";
+                    var startMinute = "0";
+                    var startSecond = "0";
+                    var todayYear = today.getFullYear();
+                    var todayMonth = today.getMonth() + 1;
+                    var todayDate = today.getDate();
+                    var todayHour = today.getHours();
+                    var todayMinute = today.getMinutes();
+                    var todaySecond = today.getSeconds();
+                    var t1 = Date.UTC(startYear, startMonth, startDate, startHour, startMinute, startSecond);
+                    var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
+                    var diff = t2 - t1;
+                    var diffYears = Math.floor(diff / years);
+                    var diffDays = Math.floor((diff / days) - diffYears * 365);
+                    var diffHours = Math.floor((diff - (diffYears * 365 + diffDays) * days) / hours);
+                    var diffMinutes = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours) /
+                        minutes);
+                    var diffSeconds = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours -
+                        diffMinutes * minutes) / seconds);
+                    if (startYear == todayYear) {
+                        document.getElementById("year").innerHTML = todayYear;
+                        document.getElementById("sitetime").innerHTML = "本站已安全运行 " + diffDays + " 天 " + diffHours +
+                            " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
+                    } else {
+                        document.getElementById("year").innerHTML = startYear + " - " + todayYear;
+                        document.getElementById("sitetime").innerHTML = "本站已安全运行 " + diffYears + " 年 " + diffDays +
+                            " 天 " + diffHours + " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
+                    }
+                }
+                setInterval(siteTime, 1000);
+            </script>
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/tongji4m3" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="javascript:void(0)" class="tooltipped"  data-tooltip="微信联系我:tongji4m3" data-position="top" data-delay="50">
+        <i class="fab fa-weixin"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="javascript:void(0)" class="tooltipped"  data-tooltip="QQ联系我: 1254931237" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fas fa-rss"></i>
+    </a>
+
+</div>
+    </div>
+</footer>
+
+
+
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/gh/tongji4m3/tongji4m3.github.io/js/search.js"></script>
+<script type="text/javascript">
+$(function () {
+    searchFunc("https://cdn.jsdelivr.net/gh/tongji4m3/tongji4m3.github.io/search.xml", 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="https://cdn.jsdelivr.net/gh/tongji4m3/tongji4m3.github.io/libs/materialize/materialize.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/tongji4m3/tongji4m3.github.io/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/tongji4m3/tongji4m3.github.io/libs/aos/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/tongji4m3/tongji4m3.github.io/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/tongji4m3/tongji4m3.github.io/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/tongji4m3/tongji4m3.github.io/js/matery.js"></script>
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="https://cdn.jsdelivr.net/gh/tongji4m3/tongji4m3.github.io/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="https://cdn.jsdelivr.net/gh/tongji4m3/tongji4m3.github.io/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+    
+
+    
+    
+    <script type="text/javascript" size="150" alpha='0.6'
+        zIndex="-1" src="https://cdn.jsdelivr.net/gh/tongji4m3/tongji4m3.github.io/libs/background/ribbon-refresh.min.js" async="async"></script>
+    
+
+    
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/tongji4m3/tongji4m3.github.io/libs/background/ribbon-dynamic.js" async="async"></script>
+    
+
+    
+    <script src="https://cdn.jsdelivr.net/gh/tongji4m3/tongji4m3.github.io/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+</body>
+
+</html>
