@@ -1,0 +1,1601 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="项目------操作系统_电梯调度项目, tongji4m3&#39;s Blog">
+    <meta name="description" content="你日渐平庸，甘于平庸，将继续平庸。">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="baidu-site-verification" content="code-MyLOF51Lns" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="google-site-verification" content="cb_eRUNfSOmCVjXFsefzdRthA-wzRyT6ws4hOMuQyUA" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>项目------操作系统_电梯调度项目 | tongji4m3&#39;s Blog</title>
+    <link rel="icon" type="image/png" href="https://cdn.jsdelivr.net/gh/tongji4m3/tongji4m3.github.io/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/tongji4m3/tongji4m3.github.io/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/tongji4m3/tongji4m3.github.io/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/tongji4m3/tongji4m3.github.io/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/tongji4m3/tongji4m3.github.io/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/tongji4m3/tongji4m3.github.io/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/tongji4m3/tongji4m3.github.io/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/tongji4m3/tongji4m3.github.io/css/my.css">
+
+    <script src="https://cdn.jsdelivr.net/gh/tongji4m3/tongji4m3.github.io/libs/jquery/jquery.min.js"></script>
+
+<meta name="generator" content="Hexo 4.2.0"><link rel="alternate" href="/atom.xml" title="tongji4m3's Blog" type="application/atom+xml">
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="https://cdn.jsdelivr.net/gh/tongji4m3/tongji4m3.github.io/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">tongji4m3&#39;s Blog</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/contact" class="waves-effect waves-light">
+      
+      <i class="fas fa-comments" style="zoom: 0.6;"></i>
+      
+      <span>留言板</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>友情链接</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="https://cdn.jsdelivr.net/gh/tongji4m3/tongji4m3.github.io/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">tongji4m3&#39;s Blog</div>
+        <div class="logo-desc">
+            
+            你日渐平庸，甘于平庸，将继续平庸。
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/contact" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-comments"></i>
+			
+			留言板
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			友情链接
+		</a>
+          
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/tongji4m3" class="waves-effect waves-light" target="_blank">
+                <i class="fab fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/tongji4m3" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/tongji4m3/tongji4m3.github.io/medias/featureimages/9.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">项目------操作系统_电梯调度项目</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/tongji4m3/tongji4m3.github.io/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        margin: 35px 0 15px 0;
+        padding-left: 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        height: calc(100vh - 250px);
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+
+        position: absolute;
+        right: 23.5vw;
+        display: block;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/Java/">
+                                <span class="chip bg-color">Java</span>
+                            </a>
+                        
+                            <a href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">
+                                <span class="chip bg-color">操作系统</span>
+                            </a>
+                        
+                            <a href="/tags/Swing/">
+                                <span class="chip bg-color">Swing</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/%E9%A1%B9%E7%9B%AE%E6%96%87%E6%A1%A3/" class="post-category">
+                                项目文档
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2020-05-30
+                </div>
+                
+
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    2.6k
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    8 分
+                </div>
+                
+
+                
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+        </div>
+        <hr class="clearfix">
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h1 id="电梯调度项目源码-Github地址"><a href="#电梯调度项目源码-Github地址" class="headerlink" title="电梯调度项目源码_Github地址"></a><a href="https://github.com/tongji4m3/memoryProject" target="_blank" rel="noopener">电梯调度项目源码_Github地址</a></h1><h1 id="项目目的"><a href="#项目目的" class="headerlink" title="项目目的"></a>项目目的</h1><ul>
+<li><p>学习调度算法</p>
+</li>
+<li><p>通过实现电梯调度，体会操作系统调度过程</p>
+</li>
+<li><p>学习特定环境下多线程编程方法</p>
+</li>
+</ul>
+<h1 id="项目需求"><a href="#项目需求" class="headerlink" title="项目需求"></a>项目需求</h1><ul>
+<li><p>某一层楼20层，有五部互联的电梯。基于线程思想，编写一个电梯调度程序。（可考虑：楼层和电梯数可设置）。</p>
+</li>
+<li><p>每个电梯里面设置必要功能键：如数字键、关门键、开门键、上行键、下行键、报警键、当前电梯的楼层数、上升及下降状态等。</p>
+</li>
+<li><p>每层楼的每部电梯门口，应该有上行和下行按钮和当前电梯状态的数码显示器。</p>
+</li>
+<li><p>五部电梯门口的按钮是互联结的，即当一个电梯按钮按下去时，其他电梯的相应按钮也就同时点亮，表示也按下去了。</p>
+</li>
+<li><p>所有电梯初始状态都在第一层。每个电梯如果在它的上层或者下层没有相应请求情况下，则应该在原地保持不动。</p>
+</li>
+<li><p>调度算法自行设计。</p>
+</li>
+</ul>
+<h1 id="项目设计及算法"><a href="#项目设计及算法" class="headerlink" title="项目设计及算法"></a>项目设计及算法</h1><h2 id="项目开发概览"><a href="#项目开发概览" class="headerlink" title="项目开发概览"></a>项目开发概览</h2><ul>
+<li><p>采用JAVA开发语言,使用JAVA的Swing类库来进行图形界面设计与开发。</p>
+</li>
+<li><p>在windows操作系统环境下，采用IDEA作为开发工具。</p>
+</li>
+<li><p>通过实现 Runnable 接口来进行多线程编程。</p>
+</li>
+<li><p>采用扫描算法（SCAN算法）来进行电梯调度。</p>
+</li>
+</ul>
+<h2 id="扫描算法介绍"><a href="#扫描算法介绍" class="headerlink" title="扫描算法介绍"></a>扫描算法介绍</h2><ul>
+<li><p>简介：扫描算法（SCAN）<br>是一种按照楼层顺序依次服务请求，它让电梯在最底层和最顶层之间连续往返运行，在运行过程中响应处在于电梯运行方向相同的各楼层上的请求。</p>
+</li>
+<li><p>优点:进行寻找楼层的优化，效率比较高。较好地解决了电梯移动的问题，在这个算法中，每个电梯响应乘客请求使乘客获得服务的次序是由其发出请求的乘客的位置与当前电梯位置之间的距离来决定的。所有的与电梯运行方向相同的乘客的请求在一次电向上运行或向下运行的过程中完成，免去了电梯频繁的来回移动。</p>
+</li>
+<li><p>缺点:扫描算法是一个非实时算法，他的平均响应时间较长。</p>
+</li>
+</ul>
+<h2 id="项目多线程"><a href="#项目多线程" class="headerlink" title="项目多线程"></a>项目多线程</h2><blockquote>
+<p>  计划在项目中通过implement<br>  Runnable接口来实现多线程，之后重写里面的run（）方法。并且通过new<br>  Thread(该类).start()来开启一条多线程。</p>
+</blockquote>
+<blockquote>
+<p>  其中，电梯要采用多线程方式启动以此实现调度，并且电梯调度控制类也需要以多线程方式调度，以此实时监听任务并且调度电梯。除此之外，在电梯视图控制类也需要多线程方式启动，以此实时监听并且控制画面刷新。</p>
+</blockquote>
+<p><img src="https://tongji4m3.oss-cn-beijing.aliyuncs.com/b2b901b25dc6a7e6a874f48b8c59ce66.png"></p>
+<h2 id="项目架构"><a href="#项目架构" class="headerlink" title="项目架构"></a>项目架构</h2><ul>
+<li><p>总体采用三层架构,分别是实体层，展示层,控制层。</p>
+</li>
+<li><p>实体层中有三个类，Const类负责存储项目的各种常量，Elevator类负责创建电梯实体，Task类则负责存储实际需求任务。</p>
+</li>
+<li><p>展示层则负责页面的展示，共有三个类，View负责展示整体画面。ElevatorView负责展示电梯内部的按钮，ElevatorOutView负责展示每层楼电梯外部按钮。</p>
+</li>
+<li><p>控制层负责控制事件触发以及调度算法执行。ElevatorOutViewControl负责电梯按钮触发事件以及动态刷新页面等等。ElevatorsControl则根据SCAN算法负责对所有触发的任务进行电梯调度。</p>
+</li>
+<li><p>最后，MainTest是函数的入口，负责以多线程的方式启动ElevatorsControl类，并且启动整个视图View。</p>
+</li>
+</ul>
+<p><img src="https://tongji4m3.oss-cn-beijing.aliyuncs.com/70cf77f8256087dc81a91e8107406d60.jpg"></p>
+<p><img src="https://tongji4m3.oss-cn-beijing.aliyuncs.com/9538497173b402aa0e037e6ff47396bb.png"></p>
+<h1 id="项目实现"><a href="#项目实现" class="headerlink" title="项目实现"></a>项目实现</h1><h2 id="domain包下类实现"><a href="#domain包下类实现" class="headerlink" title="domain包下类实现"></a>domain包下类实现</h2><h3 id="Const类实现"><a href="#Const类实现" class="headerlink" title="Const类实现"></a>Const类实现</h3><blockquote>
+<p>  该类存储了项目需要的一些全局变量。例如电梯数量，楼层高度；各种视图的位置大小等，还有用UP，DOWN，STOP来代表电梯状态。</p>
+</blockquote>
+<p><img src="https://tongji4m3.oss-cn-beijing.aliyuncs.com/d0120d5480182e8f69bfd07dfa2fd1a6.png"></p>
+<h3 id="Elevator类实现"><a href="#Elevator类实现" class="headerlink" title="Elevator类实现"></a>Elevator类实现</h3><blockquote>
+<p>  定义了电梯序号，当前该电梯所处位置，以及当前状态，例如UP,DOWN等。而且该类实现了Runnable接口，实现run（）方法，之后调度时就可以以多线程方式启动电梯。</p>
+</blockquote>
+<blockquote>
+<p>  部分代码如下（下同）：</p>
+</blockquote>
+<p><img src="https://tongji4m3.oss-cn-beijing.aliyuncs.com/e08e56b4c83ab8265608e3d0a79e063e.png"></p>
+<h3 id="Task类实现"><a href="#Task类实现" class="headerlink" title="Task类实现"></a>Task类实现</h3><blockquote>
+<p>  该类主要提供要操作的任务，共有三个变量：需要上行还是下行；当前位置，要去的位置。该类在电梯内外都能使用，当在电梯外时，to即要去的位置设置为-1即可。并且提供set，get方法，以及构造函数等。</p>
+</blockquote>
+<p><img src="https://tongji4m3.oss-cn-beijing.aliyuncs.com/3422a76f6d2b8aba3ae47056ba2c67a9.png"></p>
+<h2 id="view包下类实现"><a href="#view包下类实现" class="headerlink" title="view包下类实现"></a>view包下类实现</h2><h3 id="ElevatorView类实现"><a href="#ElevatorView类实现" class="headerlink" title="ElevatorView类实现"></a>ElevatorView类实现</h3><blockquote>
+<p>  该类通过继承Jpanel类来负责展示电梯内部视图，例如开门关门按钮，要去的楼层按钮等，并且对按钮提供了事件监听。</p>
+</blockquote>
+<p><img src="https://tongji4m3.oss-cn-beijing.aliyuncs.com/64634ad3a094fc1d7bf04f2db86e2f1b.png"></p>
+<p><img src="https://tongji4m3.oss-cn-beijing.aliyuncs.com/619067c8f9591193ea1958173259060d.png"></p>
+<h3 id="ElevatorOutView类实现"><a href="#ElevatorOutView类实现" class="headerlink" title="ElevatorOutView类实现"></a>ElevatorOutView类实现</h3><blockquote>
+<p>  该类也继承了Jpanel，负责展示楼层间的电梯外部视图。主要有上升下降按钮，以及显示电梯状态以及位置的文本。还包含了一个ElevatorControl类对象，以为需要得到里面的电梯对象。</p>
+</blockquote>
+<p><img src="https://tongji4m3.oss-cn-beijing.aliyuncs.com/619067c8f9591193ea1958173259060d.png"></p>
+<p><img src="https://tongji4m3.oss-cn-beijing.aliyuncs.com/d9e7185cf83f3e64ff58f4be3f9a9e92.png"></p>
+<h3 id="View类实现"><a href="#View类实现" class="headerlink" title="View类实现"></a>View类实现</h3><blockquote>
+<p>  该类是视图的最外层，负责展示其他组件，如电梯内部，外部视图等。它通过继承Jframe类实现该功能。他可以调用ElevatorView类与ElevatorOutView类来批量创造电梯内外视图，达到最终效果。</p>
+</blockquote>
+<p><img src="https://tongji4m3.oss-cn-beijing.aliyuncs.com/faa67568b8f558e807cad36c271373fb.png"></p>
+<p><img src="https://tongji4m3.oss-cn-beijing.aliyuncs.com/8fb4d6f9147a4466562fedfefb942b82.png"></p>
+<h2 id="control包下类实现"><a href="#control包下类实现" class="headerlink" title="control包下类实现"></a>control包下类实现</h2><h3 id="ElevatorOutViewControl类实现"><a href="#ElevatorOutViewControl类实现" class="headerlink" title="ElevatorOutViewControl类实现"></a>ElevatorOutViewControl类实现</h3><blockquote>
+<p>  该类主要有两个功能,一是对外部电梯按钮进行事件监听,并且向控制器添加任务,<br>  二是对外部电梯标签进行刷新,以标识电梯目前的位置以及状态。</p>
+</blockquote>
+<blockquote>
+<p>  首先初始化时，会创建20*5个ElevatorOutView对象，代表每层楼，每个电梯都有一个外部视图。其次，会分别给所有ElevatorOutView对象的开门关门键提供事件监听，当按下按钮时，会在控制器中添加任务，并且同楼层的电梯的相同方向按钮会同时变红，代表被按下。</p>
+</blockquote>
+<blockquote>
+<p>  该类也实现了Runnable接口，在run方法中，每隔100ms刷新页面，将最新的电梯状态展示，并且将已完成任务从control类控制列表中删除。</p>
+</blockquote>
+<p><img src="https://tongji4m3.oss-cn-beijing.aliyuncs.com/f1fad668c43ca41ee9b665f51f0f3963.png"></p>
+<p><img src="https://tongji4m3.oss-cn-beijing.aliyuncs.com/ba53b196d33be1fa43db04190cfcb19f.png"></p>
+<h3 id="ElevatorsControl类实现"><a href="#ElevatorsControl类实现" class="headerlink" title="ElevatorsControl类实现"></a>ElevatorsControl类实现</h3><blockquote>
+<p>  负责电梯的实际调度，当没有任务时，电梯将静止不动。有任务时，电梯将持续的往返扫描运行，并且将Elevator对象中的location每秒向上或向下改变1楼（取决于当前电梯运行的状态）。且设置有1个任务则第一个电梯运行，有两个则前两个电梯运行..大于5个任务则所有电梯都不断扫描运行。因为会在ElevatorOutViewControl对象中实时响应任务，所有任务会实时更新，而电梯状态也会实时更新。例如当任务数量从5变为4时，则电梯5将变为静止状态。</p>
+</blockquote>
+<p><img src="https://tongji4m3.oss-cn-beijing.aliyuncs.com/4ff18f1c272f4f3db3ccb6cf2b7c7f1c.png"></p>
+<h1 id="项目界面展示"><a href="#项目界面展示" class="headerlink" title="项目界面展示"></a>项目界面展示</h1><h2 id="总体界面展示"><a href="#总体界面展示" class="headerlink" title="总体界面展示"></a>总体界面展示</h2><p><img src="https://tongji4m3.oss-cn-beijing.aliyuncs.com/e5a65a44d44fe8c757ece5a49751a127.png"></p>
+<blockquote>
+<p>  左边为五部电梯的内部视图，灰色标签表明具体是哪部电梯的内部视图，其中按钮则分别是要去的楼层，报警键，开门关门键。</p>
+</blockquote>
+<blockquote>
+<p>  右边则是楼层视图，以行来分析，则一行中，最左边是楼层高度，其次是电梯在该楼层的上行下行按钮以及电梯的状态和电梯目前的位置（因为初始在1楼而且为静止状态，所以显示为∎1）。因为有五个电梯，所以有5个电梯的按钮及状态显示。共有20行，代表20楼，每行为每楼可进行的按钮。</p>
+</blockquote>
+<blockquote>
+<p>  以一列来看，则每一列代表了每个电梯在各个楼层的上下行操作按钮，以及电梯状态，因为为同一个电梯，所以每一列的电梯状态都相同，标志了该电梯目前的状态以及该电梯所处的楼层。因为有五个电梯，所以有五列。</p>
+</blockquote>
+<h2 id="电梯运行界面展示"><a href="#电梯运行界面展示" class="headerlink" title="电梯运行界面展示"></a>电梯运行界面展示</h2><p><img src="https://tongji4m3.oss-cn-beijing.aliyuncs.com/3d2b3c03c8da120f68f0ffe0d11c87eb.png"></p>
+<blockquote>
+<p>  如图为按下了2个上楼,2个下楼按钮的电梯图,可以看出,同楼层按钮是互联结的,并且此时一号电梯处于上升状态,且目前在7楼,其他电梯同理。注意，此时电梯5处于静止状态，并且在一楼。</p>
+</blockquote>
+<p><img src="https://tongji4m3.oss-cn-beijing.aliyuncs.com/dc70bb469eeae097811a17de09f26d21.png"></p>
+<blockquote>
+<p>  接上图，在电梯上行的时候，处理了楼层8，楼层11的上行请求，所以上行请求消失。</p>
+</blockquote>
+<p><img src="https://tongji4m3.oss-cn-beijing.aliyuncs.com/685efb1e717ce692a1656e1387baabf6.png"></p>
+<blockquote>
+<p>  如图，因为电梯1下行，处理完了两个下行请求。且之后没有任务时，就处于静止状态。</p>
+</blockquote>
+<h2 id="电梯内部按钮界面"><a href="#电梯内部按钮界面" class="headerlink" title="电梯内部按钮界面"></a>电梯内部按钮界面</h2><p><img src="https://tongji4m3.oss-cn-beijing.aliyuncs.com/3baf35d4b474eacc8b7c6d6f6569dbda.png"></p>
+<blockquote>
+<p>  如图，电梯内部按钮都可以按下,如选择哪层楼，开门关门等。</p>
+</blockquote>
+<h1 id="项目实现情况与可行性分析"><a href="#项目实现情况与可行性分析" class="headerlink" title="项目实现情况与可行性分析"></a>项目实现情况与可行性分析</h1><h2 id="实现情况"><a href="#实现情况" class="headerlink" title="实现情况"></a>实现情况</h2><ul>
+<li><p>实现多线程电梯及实现Scan电梯调度算法。</p>
+</li>
+<li><p>五部电梯门口的按钮是互联结的，实现同时按下。</p>
+</li>
+<li><p>楼层和电梯数可设置。</p>
+</li>
+<li><p>所有电梯初始状态都在第一层。</p>
+</li>
+<li><p>每个电梯如果在它的上层或者下层没有相应请求情况下，则保持不动。</p>
+</li>
+<li><p>每个电梯里面设置必要功能键。</p>
+</li>
+<li><p>每层楼的每部电梯门口，有上行和下行按钮和当前电梯状态的数码显示器。</p>
+</li>
+<li><p>只能在楼层等待电梯时发出任务请求。进入电梯内部后不能操纵电梯内部按钮（如开门，关门，上升下降到某层楼等）。</p>
+</li>
+</ul>
+<h2 id="可行性分析"><a href="#可行性分析" class="headerlink" title="可行性分析"></a>可行性分析</h2><ul>
+<li><p>该项目基本实现了电梯的调度功能，基本能完成需求</p>
+</li>
+<li><p>没有实现进入电梯内部后的任务请求调度，只能是进入电梯后等待电梯不断上下扫描到达目的地。</p>
+</li>
+<li><p>调度算法不够合理，电梯只会不断上下扫描，响应可能会比较久。例如当所有电梯都处于8楼，而且是上行时。此时如果在7楼新提出了一个上行请求时，电梯会先上升到顶楼，再下到1楼，再上升到7楼才会响应这个请求。但幸运的是，这种情况出现的概率比较小，因为有5辆电梯。他们大概率处于不同的状态，或者是静止状态，所以能很快做出响应。</p>
+</li>
+<li><p>没有考虑到电梯人数超载问题</p>
+</li>
+</ul>
+
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">tongji4m3</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="https://tongji4m3.club/posts/4ef3d1ce.html">https://tongji4m3.club/posts/4ef3d1ce.html</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="/about" target="_blank">tongji4m3</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/Java/">
+                                    <span class="chip bg-color">Java</span>
+                                </a>
+                            
+                                <a href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">
+                                    <span class="chip bg-color">操作系统</span>
+                                </a>
+                            
+                                <a href="/tags/Swing/">
+                                    <span class="chip bg-color">Swing</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/tongji4m3/tongji4m3.github.io/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.4rem;
+        line-height: 38px;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="https://cdn.jsdelivr.net/gh/tongji4m3/tongji4m3.github.io/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="https://cdn.jsdelivr.net/gh/tongji4m3/tongji4m3.github.io/medias/reward/wechat.jpg" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+        <style>
+    .valine-card {
+        margin: 1.5rem auto;
+    }
+
+    .valine-card .card-content {
+        padding: 20px 20px 5px 20px;
+    }
+
+    #vcomments textarea {
+        box-sizing: border-box;
+        background: url("/medias/comment_bg.png") 100% 100% no-repeat;
+    }
+
+    #vcomments p {
+        margin: 2px 2px 10px;
+        font-size: 1.05rem;
+        line-height: 1.78rem;
+    }
+
+    #vcomments blockquote p {
+        text-indent: 0.2rem;
+    }
+
+    #vcomments a {
+        padding: 0 2px;
+        color: #4cbf30;
+        font-weight: 500;
+        text-decoration: none;
+    }
+
+    #vcomments img {
+        max-width: 100%;
+        height: auto;
+        cursor: pointer;
+    }
+
+    #vcomments ol li {
+        list-style-type: decimal;
+    }
+
+    #vcomments ol,
+    ul {
+        display: block;
+        padding-left: 2em;
+        word-spacing: 0.05rem;
+    }
+
+    #vcomments ul li,
+    ol li {
+        display: list-item;
+        line-height: 1.8rem;
+        font-size: 1rem;
+    }
+
+    #vcomments ul li {
+        list-style-type: disc;
+    }
+
+    #vcomments ul ul li {
+        list-style-type: circle;
+    }
+
+    #vcomments table, th, td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+
+    #vcomments table, th, td {
+        border: 0;
+    }
+
+    table tr:nth-child(2n), thead {
+        background-color: #fafafa;
+    }
+
+    #vcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+
+    #vcomments table td {
+        min-width: 80px;
+    }
+
+    #vcomments h1 {
+        font-size: 1.85rem;
+        font-weight: bold;
+        line-height: 2.2rem;
+    }
+
+    #vcomments h2 {
+        font-size: 1.65rem;
+        font-weight: bold;
+        line-height: 1.9rem;
+    }
+
+    #vcomments h3 {
+        font-size: 1.45rem;
+        font-weight: bold;
+        line-height: 1.7rem;
+    }
+
+    #vcomments h4 {
+        font-size: 1.25rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    #vcomments h5 {
+        font-size: 1.1rem;
+        font-weight: bold;
+        line-height: 1.4rem;
+    }
+
+    #vcomments h6 {
+        font-size: 1rem;
+        line-height: 1.3rem;
+    }
+
+    #vcomments p {
+        font-size: 1rem;
+        line-height: 1.5rem;
+    }
+
+    #vcomments hr {
+        margin: 12px 0;
+        border: 0;
+        border-top: 1px solid #ccc;
+    }
+
+    #vcomments blockquote {
+        margin: 15px 0;
+        border-left: 5px solid #42b983;
+        padding: 1rem 0.8rem 0.3rem 0.8rem;
+        color: #666;
+        background-color: rgba(66, 185, 131, .1);
+    }
+
+    #vcomments pre {
+        font-family: monospace, monospace;
+        padding: 1.2em;
+        margin: .5em 0;
+        background: #272822;
+        overflow: auto;
+        border-radius: 0.3em;
+        tab-size: 4;
+    }
+
+    #vcomments code {
+        font-family: monospace, monospace;
+        padding: 1px 3px;
+        font-size: 0.92rem;
+        color: #e96900;
+        background-color: #f8f8f8;
+        border-radius: 2px;
+    }
+
+    #vcomments pre code {
+        font-family: monospace, monospace;
+        padding: 0;
+        color: #e8eaf6;
+        background-color: #272822;
+    }
+
+    #vcomments pre[class*="language-"] {
+        padding: 1.2em;
+        margin: .5em 0;
+    }
+
+    #vcomments code[class*="language-"],
+    pre[class*="language-"] {
+        color: #e8eaf6;
+    }
+
+    #vcomments [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+
+    #vcomments b,
+    strong {
+        font-weight: bold;
+    }
+
+    #vcomments dfn {
+        font-style: italic;
+    }
+
+    #vcomments small {
+        font-size: 85%;
+    }
+
+    #vcomments cite {
+        font-style: normal;
+    }
+
+    #vcomments mark {
+        background-color: #fcf8e3;
+        padding: .2em;
+    }
+
+    #vcomments table, th, td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+
+    table tr:nth-child(2n), thead {
+        background-color: #fafafa;
+    }
+
+    #vcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+
+    #vcomments table td {
+        min-width: 80px;
+    }
+
+    #vcomments [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+</style>
+
+<div class="card valine-card" data-aos="fade-up">
+    <div class="comment_headling" style="font-size: 20px; font-weight: 700; position: relative; padding-left: 20px; top: 15px; padding-bottom: 5px;">
+        <i class="fas fa-comments fa-fw" aria-hidden="true"></i>
+        <span>评论</span>
+    </div>
+    <div id="vcomments" class="card-content" style="display: grid">
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/gh/tongji4m3/tongji4m3.github.io/libs/valine/av-min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/tongji4m3/tongji4m3.github.io/libs/valine/Valine.min.js"></script>
+<script>
+    new Valine({
+        el: '#vcomments',
+        appId: 'b3l6kB5FAaRmQL4rJm9sKfxz-gzGzoHsz',
+        appKey: 'T26ixt4nAVDxB4V3gvBDUzP6',
+        notify: 'false' === 'true',
+        verify: 'false' === 'true',
+        visitor: 'true' === 'true',
+        avatar: 'mm',
+        pageSize: '10',
+        lang: 'zh-cn',
+        placeholder: '留下你的足迹吧~'
+    });
+</script>
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/posts/d8f0e349.html">
+                    <div class="card-image">
+                        
+                        
+                        <img src="https://cdn.jsdelivr.net/gh/tongji4m3/tongji4m3.github.io/medias/featureimages/22.jpg" class="responsive-img" alt="LeetCode刷题笔记136">
+                        
+                        <span class="card-title">LeetCode刷题笔记136</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            LeetCode刷题笔记
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-05-31
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/LeetCode%E7%AC%94%E8%AE%B0/" class="post-category">
+                                    LeetCode笔记
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/LeetCode/">
+                        <span class="chip bg-color">LeetCode</span>
+                    </a>
+                    
+                    <a href="/tags/%E6%95%B0%E7%BB%84/">
+                        <span class="chip bg-color">数组</span>
+                    </a>
+                    
+                    <a href="/tags/%E5%BC%82%E6%88%96/">
+                        <span class="chip bg-color">异或</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/posts/5f8f47ab.html">
+                    <div class="card-image">
+                        
+                        
+                        <img src="https://cdn.jsdelivr.net/gh/tongji4m3/tongji4m3.github.io/medias/featureimages/10.jpg" class="responsive-img" alt="LeetCode刷题笔记121">
+                        
+                        <span class="card-title">LeetCode刷题笔记121</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            LeetCode刷题笔记
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-05-29
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/LeetCode%E7%AC%94%E8%AE%B0/" class="post-category">
+                                    LeetCode笔记
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/LeetCode/">
+                        <span class="chip bg-color">LeetCode</span>
+                    </a>
+                    
+                    <a href="/tags/%E6%95%B0%E7%BB%84/">
+                        <span class="chip bg-color">数组</span>
+                    </a>
+                    
+                    <a href="/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/">
+                        <span class="chip bg-color">动态规划</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/tongji4m3/tongji4m3.github.io/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/tongji4m3/tongji4m3.github.io/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/tongji4m3/tongji4m3.github.io/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/tongji4m3/tongji4m3.github.io/libs/codeBlock/codeShrink.js"></script>
+
+
+<!-- 代码块折行 -->
+
+<style type="text/css">
+code[class*="language-"], pre[class*="language-"] { white-space: pre !important; }
+</style>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/gh/tongji4m3/tongji4m3.github.io/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h1,h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h1,h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+
+    <footer class="page-footer bg-color">
+    
+    <div class="container row center-align" style="margin-bottom: 15px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            <span id="year">2019</span>
+            <a href="/about" target="_blank">tongji4m3</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            <br>
+            
+            &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
+                class="white-color">135.1k</span>&nbsp;字
+            
+            
+            
+            
+            
+            
+            <span id="busuanzi_container_site_pv">
+                |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv"
+                    class="white-color"></span>&nbsp;次
+            </span>
+            
+            
+            <br>
+            
+            <span id="sitetime">载入运行时间...</span>
+            <script>
+                function siteTime() {
+                    var seconds = 1000;
+                    var minutes = seconds * 60;
+                    var hours = minutes * 60;
+                    var days = hours * 24;
+                    var years = days * 365;
+                    var today = new Date();
+                    var startYear = "2019";
+                    var startMonth = "09";
+                    var startDate = "28";
+                    var startHour = "0";
+                    var startMinute = "0";
+                    var startSecond = "0";
+                    var todayYear = today.getFullYear();
+                    var todayMonth = today.getMonth() + 1;
+                    var todayDate = today.getDate();
+                    var todayHour = today.getHours();
+                    var todayMinute = today.getMinutes();
+                    var todaySecond = today.getSeconds();
+                    var t1 = Date.UTC(startYear, startMonth, startDate, startHour, startMinute, startSecond);
+                    var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
+                    var diff = t2 - t1;
+                    var diffYears = Math.floor(diff / years);
+                    var diffDays = Math.floor((diff / days) - diffYears * 365);
+                    var diffHours = Math.floor((diff - (diffYears * 365 + diffDays) * days) / hours);
+                    var diffMinutes = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours) /
+                        minutes);
+                    var diffSeconds = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours -
+                        diffMinutes * minutes) / seconds);
+                    if (startYear == todayYear) {
+                        document.getElementById("year").innerHTML = todayYear;
+                        document.getElementById("sitetime").innerHTML = "本站已安全运行 " + diffDays + " 天 " + diffHours +
+                            " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
+                    } else {
+                        document.getElementById("year").innerHTML = startYear + " - " + todayYear;
+                        document.getElementById("sitetime").innerHTML = "本站已安全运行 " + diffYears + " 年 " + diffDays +
+                            " 天 " + diffHours + " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
+                    }
+                }
+                setInterval(siteTime, 1000);
+            </script>
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/tongji4m3" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="javascript:void(0)" class="tooltipped"  data-tooltip="微信联系我:tongji4m3" data-position="top" data-delay="50">
+        <i class="fab fa-weixin"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="javascript:void(0)" class="tooltipped"  data-tooltip="QQ联系我: 1254931237" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fas fa-rss"></i>
+    </a>
+
+</div>
+    </div>
+</footer>
+
+
+
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/gh/tongji4m3/tongji4m3.github.io/js/search.js"></script>
+<script type="text/javascript">
+$(function () {
+    searchFunc("https://cdn.jsdelivr.net/gh/tongji4m3/tongji4m3.github.io/search.xml", 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="https://cdn.jsdelivr.net/gh/tongji4m3/tongji4m3.github.io/libs/materialize/materialize.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/tongji4m3/tongji4m3.github.io/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/tongji4m3/tongji4m3.github.io/libs/aos/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/tongji4m3/tongji4m3.github.io/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/tongji4m3/tongji4m3.github.io/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/tongji4m3/tongji4m3.github.io/js/matery.js"></script>
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="https://cdn.jsdelivr.net/gh/tongji4m3/tongji4m3.github.io/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="https://cdn.jsdelivr.net/gh/tongji4m3/tongji4m3.github.io/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+    
+
+    
+    
+    <script type="text/javascript" size="150" alpha='0.6'
+        zIndex="-1" src="https://cdn.jsdelivr.net/gh/tongji4m3/tongji4m3.github.io/libs/background/ribbon-refresh.min.js" async="async"></script>
+    
+
+    
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/tongji4m3/tongji4m3.github.io/libs/background/ribbon-dynamic.js" async="async"></script>
+    
+
+    
+    <script src="https://cdn.jsdelivr.net/gh/tongji4m3/tongji4m3.github.io/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+</body>
+
+</html>

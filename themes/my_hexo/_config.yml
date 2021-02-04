@@ -216,11 +216,11 @@ profile:
 myProjects:
   enable: true
   data:
-    communityVue:
+    boying:
       icon: fas fa-file-alt
       iconBackground: 'linear-gradient(to bottom right, #66BB6A 0%, #81C784 100%)'
-      url: https://github.com/tongji4m3/communityVue
-      desc: 数据库项目--社团管理系统,用Vue开发的前端单页面应用
+      url: https://github.com/tongji4m3/boying
+      desc: boying是一个娱乐票务平台，包括前台演出门票购买系统及后台管理系统。
     King-of-Glory:
         icon: fas fa-database
         iconBackground: 'linear-gradient(to bottom right, #F06292 0%, #EF5350 100%)'

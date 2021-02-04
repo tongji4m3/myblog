@@ -4,7 +4,7 @@ author: tongji4m3
 top: false
 cover: false
 coverImg: /images/1.jpg
-toc: true
+toc: false
 mathjax: false
 summary: Web项目-简单的购物网站文档。一个简单的前后端项目，其中前端只用了HTML，Css，JS
 categories: 项目文档
