@@ -1,5 +1,5 @@
 ---
-title: 数据库——MySQL相关笔记------MySQL日志相关
+title: MySQL日志相关
 author: tongji4m3
 top: false
 cover: false
@@ -12,7 +12,7 @@ tags:
   - MySQL
   - redo日志
   - undo日志
-abbrlink: 94e0411a
+abbrlink: 5d40a06
 date: 2020-12-13 00:00:00
 ---
 

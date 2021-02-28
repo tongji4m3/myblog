@@ -123,8 +123,8 @@ theme: my_hexo
 
 deploy:
   type: git
-  repository: 
-    github: git@github.com:tongji4m3/tongji4m3.github.io.git
+  repository:
+    github: https://github.com/tongji4m3/tongji4m3.github.io.git
     coding: git@e.coding.net:tongji4m3/blog/blog.git
   branch: master
 
