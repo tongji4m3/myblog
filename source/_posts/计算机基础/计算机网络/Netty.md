@@ -1,3 +1,23 @@
+---
+title: Netty
+author: tongji4m3
+top: true
+cover: false
+coverImg: /images/1.jpg
+toc: true
+mathjax: false
+summary: 学习Netty所做的笔记，包括线程模型、Reactor模式、Netty源码分析等。
+categories: 计算机网络
+tags:
+  - 线程模型
+  - 设计模式
+  - 开源框架
+abbrlink: 1c6ba3e2
+date: 2021-05-27 00:00:00
+---
+
+
+
 # 线程模型
 
 介绍完服务器如何基于I/O模型管理连接，获取输入数据，下面介绍基于进程/线程模型，服务器如何处理请求
